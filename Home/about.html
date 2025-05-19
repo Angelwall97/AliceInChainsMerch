@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Alice In Chains Merchandise</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Rock Salt', cursive;
+        }
+        .navbar {
+            background-color: black;
+            padding: 10px;
+        }
+        .navbar a {
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-right: 15px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            color: rgb(255, 0, 0);
+        }
+        .logo {
+            max-height: 150px;
+            margin: 20px auto;
+            display: block;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1, h2 {
+            color: red;
+            text-shadow: 0 0 10px black, 0 0 20px black;
+        }
+        p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: 50px auto;
+        }
+        .slide {
+            display: none;
+        }
+        .slide img {
+            width: 80%;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+            margin: 0 auto;
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 10px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        .prev:hover, .next:hover {
+            background-color: rgba(255, 0, 0, 0.8);
+        }
+        .dot-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+        .active, .dot:hover {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="Index.html">Login</a>
+        <a href="Cart.html">Shopping Cart</a>
+        <a href="about.html">About</a>
+    </div>
+
+    <!-- Clickable Logo -->
+    <a href="home.html">
+        <img src="../Imagesforwebpng/Logo.png" alt="Alice In Chains Logo" class="logo">
+    </a>
+
+    <div class="container text-center">
+        <h1>About Us</h1>
+        <p>
+            Welcome to the official Alice In Chains merchandise store, created in celebration of the legacy left by one of the most iconic bands in rock history. 
+            Alice In Chains has inspired millions with their groundbreaking music, blending grunge, metal, and acoustic melodies into a sound that is uniquely their own.
+        </p>
+        <p>
+            This store was founded to honor their incredible journey and to help spread their music to fans old and new. 
+            From their hauntingly beautiful lyrics to their unforgettable riffs, Alice In Chains has left an indelible mark on the world of music.
+        </p>
+        <p>
+            We are proud to offer a curated selection of high-quality merchandise, including vinyl records, t-shirts, and more, 
+            so you can carry a piece of their legacy with you. Thank you for joining us in celebrating the music and spirit of Alice In Chains.
+        </p>
+
+        <!-- Slideshow Section -->
+        <div class="slideshow-container">
+            <!-- Slide 1 -->
+            <div class="slide">
+                <img src="../Imagesforwebpng/r4j18Q3g0tW8pfF0iCwxgKlpBuF.jpg" alt="Layne Staley">
+                <h3 class="mt-3">Layne Staley - Vocals</h3>
+            </div>
+            <!-- Slide 2 -->
+            <div class="slide">
+                <img src="../Imagesforwebpng/cantrell-alice-in-chains.jpg" alt="Jerry Cantrell">
+                <h3 class="mt-3">Jerry Cantrell - Guitar</h3>
+            </div>
+            <!-- Slide 3 -->
+            <div class="slide">
+                <img src="../Imagesforwebpng/MV5BZDRjM2YwNmEtZDFmMC00ZjNiLTk0MDQtMTQyYTBiMWQ1ZDZiXkEyXkFqcGc@._V1_.jpg" alt="Mike Inez">
+                <h3 class="mt-3">Mike Inez - Bass</h3>
+            </div>
+            <!-- Slide 4 -->
+            <div class="slide">
+                <img src="../Imagesforwebpng/vSjgGPFkxn8LJnygaWuw1oBchMPSmL9-Y5YaPeR0QVE.webp" alt="Sean Kinney">
+                <h3 class="mt-3">Sean Kinney - Drums</h3>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+
+        <!-- Dots for Navigation -->
+        <div class="dot-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+    </div>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            const slides = document.getElementsByClassName("slide");
+            const dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+</body>
+</html>

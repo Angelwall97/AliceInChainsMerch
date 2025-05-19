@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Rock Salt', cursive;
+        }
+        .navbar {
+            background-color: black;
+            padding: 10px;
+        }
+        .navbar a {
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-right: 15px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            color: yellow;
+        }
+        .logo {
+            max-height: 150px;
+            margin: 20px auto;
+            display: block;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1, h2 {
+            color: red;
+            text-shadow: 0 0 10px black, 0 0 20px black;
+        }
+        .btn-home {
+            background-color: red;
+            color: white;
+            font-weight: bold;
+            border: 2px solid white;
+            transition: 0.3s;
+        }
+        .btn-home:hover {
+            background-color: darkred;
+            border-color: yellow;
+        }
+        .order-item {
+            border-bottom: 1px solid white;
+            padding: 10px 0;
+        }
+        .order-item img {
+            max-width: 100px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px red;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="Index.html">Login</a>
+        <a href="Cart.html">Shopping Cart</a>
+    </div>
+
+    <!-- Clickable Logo -->
+    <a href="home.html">
+        <img src="../Imagesforwebpng/Logo.png" alt="Alice In Chains Logo" class="logo">
+    </a>
+
+    <div class="container text-center">
+        <h1>Order Confirmed!</h1>
+        <p>Thank you for your purchase! Your order has been successfully placed.</p>
+        <p>A confirmation email has been sent to your email address.</p>
+        <p>Your order will be shipped within 3-5 business days. You will receive frequent updates via email to track the shipping process.</p>
+        <p>We hope you enjoy the music!</p>
+
+        <!-- Order Details Section -->
+        <h2 class="mt-5">Order Details</h2>
+        <div id="order-details" class="mt-3">
+            <!-- Order items will be dynamically added here -->
+        </div>
+
+        <a href="home.html" class="btn btn-home mt-5">Back to Home</a>
+    </div>
+
+    <script>
+        // Retrieve order details from localStorage
+        const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Function to render order details
+        function renderOrderDetails() {
+            const orderDetailsContainer = document.getElementById('order-details');
+            orderDetailsContainer.innerHTML = ''; // Clear existing items
+
+            if (cartItems.length === 0) {
+                orderDetailsContainer.innerHTML = '<p>No items found in your order.</p>';
+                return;
+            }
+
+            cartItems.forEach((item) => {
+                const orderItem = document.createElement('div');
+                orderItem.classList.add('order-item');
+                orderItem.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}" class="img-fluid">
+                    <h2>${item.name}</h2>
+                    <p>Price: $${item.price}</p>
+                    <p>Quantity: ${item.quantity}</p>
+                    ${item.size ? `<p>Size: ${item.size}</p>` : ''}
+                    ${item.gender ? `<p>Gender: ${item.gender}</p>` : ''}
+                `;
+                orderDetailsContainer.appendChild(orderItem);
+            });
+        }
+
+        // Render order details on page load
+        renderOrderDetails();
+
+        // Clear the cart from localStorage after rendering
+        localStorage.removeItem('cart');
+    </script>
+</body>
+</html>

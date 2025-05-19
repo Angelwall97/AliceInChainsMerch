@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Rock Salt', cursive;
+        }
+        .navbar {
+            background-color: black;
+            padding: 10px;
+        }
+        .navbar a {
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-right: 15px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            color: yellow;
+        }
+        .logo {
+            max-height: 150px;
+            margin: 20px auto;
+            display: block;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1 {
+            color: red;
+            text-shadow: 0 0 10px black, 0 0 20px black;
+        }
+        .btn-back {
+            background-color: red;
+            color: white;
+            font-weight: bold;
+            border: 2px solid white;
+            transition: 0.3s;
+        }
+        .btn-back:hover {
+            background-color: darkred;
+            border-color: yellow;
+        }
+        .cart-item {
+            border-bottom: 1px solid white;
+            padding: 10px 0;
+        }
+        .cart-item img {
+            max-width: 150px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px red;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="Index.html">Login</a>
+        <a href="Cart.html">Shopping Cart</a>
+    </div>
+
+    <!-- Clickable Logo -->
+    <a href="home.html">
+        <img src="../Imagesforwebpng/Logo.png" alt="Alice In Chains Logo" class="logo">
+    </a>
+
+    <div class="container text-center">
+        <h1>Your Shopping Cart</h1>
+        <p>Below are the items you have added to your cart:</p>
+        <div id="cart-items" class="mt-5">
+            <!-- Cart items will be dynamically added here -->
+        </div>
+
+        <!-- Checkout Section -->
+        <div id="checkout-section" class="mt-5">
+            <h2>Total: $<span id="total-price">0.00</span></h2>
+            <!-- Link to Checkout Page -->
+            <a href="Index.html?redirect=Checkout.html" class="btn btn-success mt-3">Proceed to Checkout</a>
+        </div>
+
+        <a href="home.html" class="btn btn-back mt-5">Back to Merchandise</a>
+    </div>
+
+    <script>
+        // Retrieve cart items from localStorage
+        const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Function to render cart items
+        function renderCart() {
+            const cartContainer = document.getElementById('cart-items');
+            const totalPriceElement = document.getElementById('total-price');
+            cartContainer.innerHTML = ''; // Clear existing items
+
+            if (cartItems.length === 0) {
+                cartContainer.innerHTML = '<p>Your cart is empty.</p>';
+                totalPriceElement.textContent = '0.00';
+                document.getElementById('checkout-section').style.display = 'none';
+                return;
+            }
+
+            let totalPrice = 0;
+
+            cartItems.forEach((item, index) => {
+                const cartItem = document.createElement('div');
+                cartItem.classList.add('cart-item');
+                cartItem.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}" class="img-fluid">
+                    <h2>${item.name}</h2>
+                    <p>Price: $${item.price}</p>
+                    <p>Quantity: ${item.quantity}</p>
+                    ${item.size ? `<p>Size: ${item.size}</p>` : ''}
+                    ${item.gender ? `<p>Gender: ${item.gender}</p>` : ''}
+                    <button class="btn btn-danger" onclick="removeItem(${index})">Remove</button>
+                `;
+                cartContainer.appendChild(cartItem);
+
+                // Calculate total price
+                totalPrice += item.price * item.quantity;
+            });
+
+            totalPriceElement.textContent = totalPrice.toFixed(2);
+            document.getElementById('checkout-section').style.display = 'block';
+        }
+
+        // Function to remove an item from the cart
+        function removeItem(index) {
+            cartItems.splice(index, 1); // Remove item from array
+            localStorage.setItem('cart', JSON.stringify(cartItems)); // Update localStorage
+            renderCart(); // Re-render cart
+        }
+
+        // Function to handle checkout
+        function checkout() {
+            if (cartItems.length === 0) {
+                alert('Your cart is empty!');
+                return;
+            }
+
+            alert('Thank you for your purchase! Your order has been placed.');
+            localStorage.removeItem('cart'); // Clear the cart
+            renderCart(); // Re-render cart
+        }
+
+        // Render cart on page load
+        renderCart();
+    </script>
+</body>
+</html>

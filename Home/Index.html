@@ -1,0 +1,152 @@
+<!-- This is a simple login page for Alice In Chains Merchandise website. It uses Bootstrap for styling and layout. -->
+<!-- The page includes a form for users to enter their username and password. Upon submission, the form data is sent to the server for processing. The page is responsive and adjusts to different screen sizes. -->
+<!-- The page is structured using Bootstrap's grid system, with a centered column for the form. The form includes input fields for username and password, and a submit button. Bootstrap's CSS and JS files are included via CDN links for styling and functionality. -->
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8">
+    <title>Alice In Chains Merchandise</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-image: url('../ImagesForWebsite/Background.jpg'); /* Path to your background image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh; /* Full height */
+            margin: 0;
+            color: white;
+            font-family: 'Rock Salt', cursive; /* Rock-style font */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .logo {
+            max-height: 200px; /* Adjust logo size */
+            display: block;
+            margin: 20px auto 50px; /* Add spacing below the logo */
+        }
+        .navbar {
+            position: absolute;
+            top: 10px;
+            width: 100%;
+            text-align: center;
+        }
+        .navbar a {
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            color: rgb(255, 0, 0);
+        }
+        .container {
+            margin-top: 20px;
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid red; /* Red border for a bold look */
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.8); /* Red glow effect */
+        }
+        h1, h2 {
+            color: red; /* Keep the text red */
+            text-shadow: 0 0 10px black, 0 0 20px black, 0 0 30px black; /* Black glow effect */
+            font-weight: bold;
+        }
+        .btn-primary {
+            background-color: transparent; /* Make the button transparent */
+            border: 2px solid red; /* Red border for the button */
+            font-weight: bold;
+            text-transform: uppercase;
+            color: white; /* White text color */
+            transition: 0.3s;
+        }
+        .btn-primary:hover {
+            background-color: rgba(255, 0, 0, 0.3); /* Slight red tint on hover */
+            border-color: yellow;
+            transform: scale(1.1); /* Slight zoom effect */
+        }
+        label {
+            font-weight: bold;
+            text-shadow: 1px 1px 5px red;
+        }
+        .form-control {
+            background-color: black; /* Black background for input fields */
+            color: white; /* White text color */
+            border: 1px solid red; /* Red border for input fields */
+        }
+        .form-control::placeholder {
+            color: white; /* White placeholder text */
+            opacity: 0.8; /* Slightly transparent placeholder */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="Cart.html">Shopping Cart</a>
+    </div>
+
+    <!-- Centered Logo at the Top -->
+    <a href="home.html">
+        <img src="../Imagesforwebpng/Logo.png" alt="Alice In Chains Logo" class="logo">
+    </a>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <h2>Merchandise</h2>
+                <h1>Members Login</h1>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form method="POST" action="/login">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+        // Check if there's a redirect query parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const redirectUrl = urlParams.get('redirect');
+
+        // Handle form submission
+        document.querySelector('form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Simulate login validation (replace with actual validation logic)
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username && password) {
+                // Redirect to the specified page or home page
+                window.location.href = redirectUrl || 'home.html';
+            } else {
+                alert('Please enter valid login details.');
+            }
+        });
+    </script>
+</body>
+</html>

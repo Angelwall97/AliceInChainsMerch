@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dirt Vinyl - Product Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Rock Salt', cursive;
+        }
+        .navbar {
+            background-color: black;
+            padding: 10px;
+        }
+        .navbar a {
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-right: 15px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            color: yellow;
+        }
+        .logo {
+            max-height: 150px;
+            margin: 20px auto;
+            display: block;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1, h2 {
+            color: red;
+            text-shadow: 0 0 10px black, 0 0 20px black;
+        }
+        .btn-back, .btn-add-to-cart {
+            background-color: red;
+            color: white;
+            font-weight: bold;
+            border: 2px solid white;
+            transition: 0.3s;
+        }
+        .btn-back:hover, .btn-add-to-cart:hover {
+            background-color: darkred;
+            border-color: yellow;
+        }
+        .product-image {
+            display: block;
+            margin: 0 auto;
+            max-width: 80%; /* Adjust the size of the image */
+            border-radius: 10px;
+            box-shadow: 0 0 20px red;
+            transition: 0.3s;
+        }
+        .product-image:hover {
+            transform: scale(1.05);
+        }
+        .tracklist {
+            text-align: left;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+        .tracklist li {
+            margin-bottom: 10px;
+        }
+        input[type="number"] {
+            background-color: darkred;
+            color: white;
+            border: 2px solid white;
+            text-align: center;
+        }
+        input[type="number"]::placeholder {
+            color: white;
+        }
+        .spotify-section h2 {
+            color: red;
+            margin-top: 30px;
+        }
+        .spotify-player {
+            margin-top: 10px;
+            border-radius: 12px;
+        }
+        .other-products {
+            margin-top: 50px;
+        }
+        .other-products img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+        }
+        .other-products h3 {
+            color: red;
+            text-shadow: 0 0 10px black, 0 0 20px black;
+        }
+        .btn-buy {
+            background-color: red;
+            border: 2px solid white;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+        .btn-buy:hover {
+            background-color: darkred;
+            border-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="Index.html">Login</a>
+        <a href="Cart.html">Shopping Cart</a>
+    </div>
+
+    <!-- Clickable Logo -->
+    <a href="home.html">
+        <img src="../Imagesforwebpng/Logo.png" alt="Alice In Chains Logo" class="logo">
+    </a>
+
+    <div class="container text-center">
+        <h1>Dirt Vinyl</h1>
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <img src="../Imagesforwebpng/DirtVinyl.png" alt="Dirt Vinyl" class="img-fluid product-image">
+            </div>
+            <div class="col-md-12 mt-4">
+                <h2>Price: $29.99</h2>
+                <p>Description: High-quality vinyl of the *Dirt* album by Alice In Chains.</p>
+                <form onsubmit="addToCart(event)">
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" name="quantity" min="1" value="1" class="form-control w-50 mx-auto">
+                    <button type="submit" class="btn btn-add-to-cart mt-3">Add to Cart</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Album Details -->
+        <h2 class="mt-5">Album Details: Dirt</h2>
+        <p><strong>Release Date:</strong> September 29, 1992</p>
+        <p><strong>Impact:</strong> *Dirt* is widely regarded as Alice In Chains' masterpiece and one of the most influential albums of the grunge era. It solidified the band's place in rock history with its dark, introspective themes and heavy, sludgy sound. The album was a significant departure from their debut, *Facelift*, diving deeper into themes of addiction, despair, and existential struggles.</p>
+
+        <h3>Layne Staley's Writing: A Deeper Look</h3>
+        <p>Layne Staley's lyrics on *Dirt* are raw, unflinching, and deeply personal, offering a harrowing glimpse into his struggles with addiction and inner turmoil. In <strong>"Sickman,"</strong> Layne's lyrics are fragmented and chaotic, mirroring the mental and physical toll of substance abuse. Lines like <em>"What the hell am I? / Thousand eyes, a fly"</em> evoke a sense of disorientation and self-loathing, while the song's erratic structure amplifies its unsettling atmosphere.</p>
+        <p>The title track, <strong>"Dirt,"</strong> is a haunting exploration of self-destruction and longing for escape. Layne's lyrics, such as <em>"I want you to kill me and dig me under"</em>, are both visceral and poetic, capturing the depths of despair with brutal honesty. The song's slow, grinding tempo and heavy riffs create a suffocating sense of hopelessness, making it one of the album's most emotionally intense tracks.</p>
+        <p>In <strong>"Hate to Feel,"</strong> Layne delves into the cyclical nature of addiction, reflecting on the pain of dependency and the struggle to break free. The lyrics, <em>"Used to be curious, now the shit's sustenance"</em>, highlight the transformation of curiosity into necessity, while the song's shifting dynamics mirror the highs and lows of addiction. Similarly, <strong>"Angry Chair"</strong> is a deeply introspective track that explores themes of isolation and self-reflection. Layne's haunting vocal delivery and cryptic lyrics, such as <em>"Loneliness is not a phase / Field of pain is where I graze"</em>, make it one of the album's standout moments.</p>
+
+        <h3>Jerry Cantrell's Writing: A Deeper Look</h3>
+        <p>Jerry Cantrell's contributions to *Dirt* are equally profound, showcasing his ability to craft deeply personal and emotionally resonant songs. <strong>"Down in a Hole"</strong> is a melancholic reflection on isolation and longing, with lyrics like <em>"I'd like to fly, but my wings have been so denied"</em> capturing a sense of vulnerability and resignation. Jerry's vocal harmonies with Layne add a layer of depth and poignancy, making it one of the album's most memorable tracks.</p>
+        <p><strong>"Rooster,"</strong> a tribute to Jerry's father, a Vietnam War veteran, is a powerful and emotional track that explores themes of survival and resilience. The lyrics, <em>"You know he ain't gonna die"</em>, convey a sense of defiance and strength, while the song's dynamic structure builds to a cathartic climax. Jerry's guitar work on "Rooster" is both evocative and atmospheric, perfectly complementing the song's narrative.</p>
+
+        <h3>The Brilliance of the Band</h3>
+        <p>The brilliance of Alice In Chains as a band shines throughout *Dirt*. Jerry Cantrell's guitar work is a masterclass in blending heavy, sludgy riffs with melodic and atmospheric elements, creating a sound that is both crushing and haunting. His harmonies with Layne Staley are a defining feature of the album, adding emotional depth and complexity to the songs.</p>
+        <p>Mike Starr's bass lines are thunderous and driving, providing a solid foundation for the album's heavy sound. His contributions are particularly notable on tracks like "Would?" and "Them Bones," where his bass work adds a sense of urgency and intensity. Sean Kinney's drumming is precise and dynamic, seamlessly shifting between the album's heavier and more introspective moments. His ability to adapt to the emotional tone of each song is a testament to his skill and versatility.</p>
+
+        <h3>A Darker Turn</h3>
+        <p>Compared to their debut album, *Facelift*, *Dirt* is a much darker and more introspective work. While *Facelift* introduced the world to Alice In Chains' unique blend of grunge and metal, *Dirt* delves deeper into the band's emotional and artistic depths. The album's unflinching exploration of addiction, despair, and existential struggles resonated with fans and critics alike, cementing its place as one of the most important albums of the 1990s.</p>
+        <p>*Dirt* is not just an album; it is an emotional journey that captures the highs and lows of the human experience. The combination of Layne Staley's deeply personal lyrics, Jerry Cantrell's masterful songwriting, and the band's unparalleled musicianship makes it a timeless masterpiece.</p>
+
+        <!-- Tracklist -->
+        <h3 class="mt-4">Tracklist:</h3>
+        <ul class="tracklist">
+            <li>1. Them Bones</li>
+            <li>2. Dam That River</li>
+            <li>3. Rain When I Die</li>
+            <li>4. Down in a Hole</li>
+            <li>5. Sickman</li>
+            <li>6. Rooster</li>
+            <li>7. Junkhead</li>
+            <li>8. Dirt</li>
+            <li>9. God Smack</li>
+            <li>10. Iron Gland</li>
+            <li>11. Hate to Feel</li>
+            <li>12. Angry Chair</li>
+            <li>13. Would?</li>
+        </ul>
+
+        <!-- Spotify Section -->
+        <div class="spotify-section">
+            <h2>Listen to Dirt</h2>
+            <iframe class="spotify-player" 
+                    src="https://open.spotify.com/embed/album/58NXIEYqmq5dQHg9nV9duM?utm_source=generator" 
+                    width="100%" 
+                    height="352" 
+                    frameborder="0" 
+                    allowfullscreen="" 
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                    loading="lazy">
+            </iframe>
+        </div>
+
+        <!-- Other Products Section -->
+        <div class="other-products">
+            <h2>Other Products</h2>
+            <div class="row mt-3">
+                <div class="col-md-4">
+                    <a href="ProductDetails_FaceliftVinyl.html">
+                        <img src="../Imagesforwebpng/FaceliftVinyl.png" alt="Facelift Vinyl">
+                    </a>
+                    <h3>Facelift Vinyl</h3>
+                    <p>$29.99</p>
+                    <a href="ProductDetails_FaceliftVinyl.html" class="btn btn-buy">View Details</a>
+                </div>
+                <div class="col-md-4">
+                    <a href="ProductDetails_SapVinyl.html">
+                        <img src="../Imagesforwebpng/SapVinyl.png" alt="Sap Vinyl">
+                    </a>
+                    <h3>Sap Vinyl</h3>
+                    <p>$25.99</p>
+                    <a href="ProductDetails_SapVinyl.html" class="btn btn-buy">View Details</a>
+                </div>
+                <div class="col-md-4">
+                    <a href="ProductDetails_JarOfFliesTshirt.html">
+                        <img src="../Imagesforwebpng/JarOfFliesTshirt.png" alt="Jar of Flies T-Shirt">
+                    </a>
+                    <h3>Jar of Flies T-Shirt</h3>
+                    <p>$22.99</p>
+                    <a href="ProductDetails_JarOfFliesTshirt.html" class="btn btn-buy">View Details</a>
+                </div>
+            </div>
+        </div>
+
+        <a href="home.html" class="btn btn-back mt-5">Back to Merchandise</a>
+    </div>
+
+    <script>
+        // Function to add the product to the cart
+        function addToCart(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get the quantity from the input field
+            const quantity = parseInt(document.getElementById('quantity').value);
+
+            // Define the product details
+            const product = {
+                name: 'Dirt Vinyl',
+                price: 29.99,
+                quantity: quantity,
+                image: '../Imagesforwebpng/DirtVinyl.png'
+            };
+
+            // Retrieve the existing cart from localStorage or initialize an empty array
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Add the product to the cart
+            cart.push(product);
+
+            // Save the updated cart back to localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            // Notify the user
+            alert(`${product.name} has been added to your cart!`);
+        }
+    </script>
+</body>
+</html>

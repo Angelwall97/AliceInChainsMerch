@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sap Vinyl - Product Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Rock Salt', cursive;
+        }
+        .navbar {
+            background-color: black;
+            padding: 10px;
+        }
+        .navbar a {
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-right: 15px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            color: yellow;
+        }
+        .logo {
+            max-height: 150px;
+            margin: 20px auto;
+            display: block;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1, h2 {
+            color: red;
+            text-shadow: 0 0 10px black, 0 0 20px black;
+        }
+        .btn-back, .btn-add-to-cart {
+            background-color: red;
+            color: white;
+            font-weight: bold;
+            border: 2px solid white;
+            transition: 0.3s;
+        }
+        .btn-back:hover, .btn-add-to-cart:hover {
+            background-color: darkred;
+            border-color: yellow;
+        }
+        .product-image {
+            display: block;
+            margin: 0 auto;
+            max-width: 80%; /* Larger size for the image */
+            border-radius: 10px;
+            box-shadow: 0 0 20px red;
+            transition: 0.3s;
+        }
+        .product-image:hover {
+            transform: scale(1.05);
+        }
+        .tracklist {
+            text-align: left;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+        .tracklist li {
+            margin-bottom: 10px;
+        }
+        input[type="number"] {
+            background-color: black;
+            color: white;
+            border: 2px solid red;
+            text-align: center;
+        }
+        input[type="number"]::placeholder {
+            color: white;
+        }
+        .spotify-player {
+            margin-top: 30px;
+            border-radius: 12px;
+        }
+        .other-products {
+            margin-top: 50px;
+        }
+        .other-products img {
+            max-width: 70%; /* Smaller size for other product images */
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+            transition: transform 0.3s;
+        }
+        .other-products img:hover {
+            transform: scale(1.1); /* Slight zoom effect on hover */
+        }
+        .other-products h3 {
+            color: red;
+            text-shadow: 0 0 10px black, 0 0 20px black;
+        }
+        .btn-view-details {
+            background-color: red;
+            color: white;
+            font-weight: bold;
+            border: 2px solid white;
+            text-transform: uppercase;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+        .btn-view-details:hover {
+            background-color: darkred;
+            border-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="Index.html">Login</a>
+        <a href="Cart.html">Shopping Cart</a>
+    </div>
+
+    <!-- Clickable Logo -->
+    <a href="home.html">
+        <img src="../Imagesforwebpng/Logo.png" alt="Alice In Chains Logo" class="logo">
+    </a>
+
+    <div class="container text-center">
+        <h1>Sap Vinyl</h1>
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <img src="../Imagesforwebpng/SapVinyl.png" alt="Sap Vinyl" class="img-fluid product-image">
+            </div>
+            <div class="col-md-12 mt-4">
+                <h2>Price: $25.99</h2>
+                <p>Description: High-quality vinyl of the *Sap* album by Alice In Chains.</p>
+                <form onsubmit="addToCart(event)">
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" name="quantity" min="1" value="1" class="form-control w-50 mx-auto">
+                    <button type="submit" class="btn btn-add-to-cart mt-3">Add to Cart</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Album Details -->
+        <h2 class="mt-5">Album Details: Sap</h2>
+        <p><strong>Release Date:</strong> February 4, 1992</p>
+        <p><strong>Impact:</strong> *Sap* marked a departure from Alice In Chains' heavier sound, showcasing a more acoustic and introspective side of the band. The EP features collaborations with notable artists such as Ann Wilson of Heart and Chris Cornell of Soundgarden, and it is considered a precursor to the grunge movement's exploration of acoustic music.</p>
+        <p><strong>Themes:</strong> The album delves into themes of introspection, regret, and emotional vulnerability, with Layne Staley's lyrics offering a raw and unfiltered glimpse into his inner struggles.</p>
+
+        <h3>Layne Staley's Writing: A Deeper Look</h3>
+        <p>Layne Staley's writing on *Sap* is deeply introspective, with "Am I Inside" standing out as one of the most haunting and emotionally charged tracks on the album. The song explores themes of isolation, self-doubt, and the search for meaning. Layne's lyrics, such as <em>"Black is all I feel, so this is how it feels to be free"</em>, convey a sense of despair and longing for release from emotional pain.</p>
+        <p>The collaboration with Ann Wilson of Heart adds a haunting beauty to the track, as her ethereal vocals intertwine with Layne's, creating a sense of duality—hope and despair, light and darkness. The song's slow, brooding tempo and minimalist instrumentation allow Layne's voice and lyrics to take center stage, making "Am I Inside" a deeply personal and unforgettable experience.</p>
+        <p>Layne's ability to channel his pain into his lyrics gave *Sap* a raw authenticity that resonated deeply with fans. His writing on this album is a testament to his talent as a lyricist and his willingness to confront his demons through his art.</p>
+
+        <h3>The Brilliance of the Band</h3>
+        <p>While Layne's lyrics and vocals are the emotional core of *Sap*, the brilliance of the rest of the band is equally vital to its success. Jerry Cantrell's acoustic guitar work is intricate and evocative, providing a rich, textured backdrop for the album's introspective themes. His harmonies with Layne add depth and complexity to the songs, enhancing their emotional impact.</p>
+        <p>Mike Starr's bass lines are subtle yet powerful, adding a sense of warmth and grounding to the acoustic arrangements. Sean Kinney's drumming is restrained and nuanced, perfectly complementing the album's softer, more introspective tone. The band's ability to adapt their sound to a more acoustic and melodic style without losing their identity is a testament to their versatility and creativity.</p>
+        <p>*Sap* is a unique entry in Alice In Chains' discography, showcasing their ability to push the boundaries of their sound while staying true to their emotional and artistic integrity. The combination of Layne's deeply personal lyrics and the band's musical brilliance makes this album a timeless masterpiece.</p>
+
+        <!-- Tracklist -->
+        <h3 class="mt-4">Tracklist:</h3>
+        <ul class="tracklist">
+            <li>1. Brother</li>
+            <li>2. Got Me Wrong</li>
+            <li>3. Right Turn</li>
+            <li>4. Am I Inside</li>
+            <li>5. Love Song</li>
+        </ul>
+
+        <!-- Spotify Player -->
+        <h3 class="mt-4">Listen to Sap</h3>
+        <iframe class="spotify-player" 
+                src="https://open.spotify.com/embed/album/4b0EWRIWecUztiLiaoEN4K?utm_source=generator" 
+                width="100%" 
+                height="352" 
+                frameborder="0" 
+                allowfullscreen="" 
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                loading="lazy">
+        </iframe>
+
+        <!-- Other Products Section -->
+        <h2 class="mt-5">Other Products</h2>
+        <div class="row other-products">
+            <div class="col-md-4 text-center">
+                <a href="ProductDetails_TripodVinyl.html">
+                    <img src="../Imagesforwebpng/TripodVinyl.png" alt="Tripod Vinyl">
+                </a>
+                <h3>Tripod Vinyl</h3>
+                <p>$29.99</p>
+                <a href="ProductDetails_TripodVinyl.html" class="btn btn-view-details">View Details</a>
+            </div>
+            <div class="col-md-4 text-center">
+                <a href="ProductDetails_DirtVinyl.html">
+                    <img src="../Imagesforwebpng/DirtVinyl.png" alt="Dirt Vinyl">
+                </a>
+                <h3>Dirt Vinyl</h3>
+                <p>$29.99</p>
+                <a href="ProductDetails_DirtVinyl.html" class="btn btn-view-details">View Details</a>
+            </div>
+            <div class="col-md-4 text-center">
+                <a href="ProductDetails_JarOfFliesTshirt.html">
+                    <img src="../Imagesforwebpng/JarOfFliesTshirt.png" alt="Jar of Flies T-Shirt">
+                </a>
+                <h3>Jar of Flies T-Shirt</h3>
+                <p>$22.99</p>
+                <a href="ProductDetails_JarOfFliesTshirt.html" class="btn btn-view-details">View Details</a>
+            </div>
+        </div>
+
+        <a href="home.html" class="btn btn-back mt-5">Back to Merchandise</a>
+    </div>
+
+    <script>
+        // Function to add the product to the cart
+        function addToCart(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get the quantity from the input field
+            const quantity = parseInt(document.getElementById('quantity').value);
+
+            // Define the product details
+            const product = {
+                name: 'Sap Vinyl',
+                price: 25.99,
+                quantity: quantity,
+                image: '../Imagesforwebpng/SapVinyl.png'
+            };
+
+            // Retrieve the existing cart from localStorage or initialize an empty array
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Add the product to the cart
+            cart.push(product);
+
+            // Save the updated cart back to localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            // Notify the user
+            alert(`${product.name} has been added to your cart!`);
+        }
+    </script>
+</body>
+</html>

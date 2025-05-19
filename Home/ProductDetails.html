@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Rock Salt', cursive;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1, h2 {
+            color: red;
+            text-shadow: 0 0 10px black, 0 0 20px black;
+        }
+        .btn-back, .btn-add-to-cart {
+            background-color: red;
+            color: white;
+            font-weight: bold;
+            border: 2px solid white;
+            transition: 0.3s;
+        }
+        .btn-back:hover, .btn-add-to-cart:hover {
+            background-color: darkred;
+            border-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center">
+        <h1>Product Details</h1>
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <img src="../Imagesforwebpng/FaceliftVinyl.png" alt="Alice In Chains Facelift Vinyl" class="img-fluid">
+                <h2>Vinyl - Facelift</h2>
+                <p>Price: $29.99</p>
+                <p>Description: This is a high-quality vinyl of the iconic Facelift album by Alice In Chains.</p>
+                <form action="Cart.html" method="POST">
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" name="quantity" min="1" value="1" class="form-control w-50 mx-auto">
+                    <button type="submit" class="btn btn-add-to-cart mt-3">Add to Cart</button>
+                </form>
+            </div>
+        </div>
+        <h2 class="mt-5">Other Available Items</h2>
+        <div class="row mt-3">
+            <div class="col-md-4">
+                <img src="../Imagesforwebpng/SapVinyl.png" alt="Alice In Chains Sap Vinyl" class="img-fluid">
+                <h3>Vinyl - Sap</h3>
+                <p>$25.99</p>
+                <a href="ProductDetails.html" class="btn btn-buy">View Details</a>
+            </div>
+            <div class="col-md-4">
+                <img src="../Imagesforwebpng/DirtVinyl.png" alt="Alice In Chains Dirt Vinyl" class="img-fluid">
+                <h3>Vinyl - Dirt</h3>
+                <p>$29.99</p>
+                <a href="ProductDetails.html" class="btn btn-buy">View Details</a>
+            </div>
+        </div>
+        <a href="home.html" class="btn btn-back mt-5">Back to Merchandise</a>
+    </div>
+</body>
+</html>

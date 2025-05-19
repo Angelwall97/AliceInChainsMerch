@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jar of Flies Vinyl - Product Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Rock Salt', cursive;
+        }
+        .navbar {
+            background-color: black;
+            padding: 10px;
+        }
+        .navbar a {
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-right: 15px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            color: yellow;
+        }
+        .logo {
+            max-height: 150px;
+            margin: 20px auto;
+            display: block;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1, h2 {
+            color: red;
+            text-shadow: 0 0 10px black, 0 0 20px black;
+        }
+        .btn-back, .btn-add-to-cart {
+            background-color: red;
+            color: white;
+            font-weight: bold;
+            border: 2px solid white;
+            transition: 0.3s;
+        }
+        .btn-back:hover, .btn-add-to-cart:hover {
+            background-color: darkred;
+            border-color: yellow;
+        }
+        .spotify-player {
+            margin-top: 30px;
+            border-radius: 12px;
+        }
+        .tracklist {
+            text-align: left;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+        .tracklist li {
+            margin-bottom: 10px;
+        }
+        .other-products {
+            margin-top: 50px;
+        }
+        .other-products img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+        }
+        .other-products h3 {
+            color: red;
+            text-shadow: 0 0 10px black, 0 0 20px black;
+        }
+        .btn-buy {
+            background-color: red;
+            border: 2px solid white;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+        .btn-buy:hover {
+            background-color: darkred;
+            border-color: yellow;
+        }
+        .product-image {
+            display: block;
+            margin: 0 auto;
+            max-width: 90%; /* Adjusted the size of the image */
+            border-radius: 10px;
+            box-shadow: 0 0 20px red;
+            transition: 0.3s;
+        }
+        .product-image:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="Index.html">Login</a>
+        <a href="Cart.html">Shopping Cart</a>
+    </div>
+
+    <!-- Clickable Logo -->
+    <a href="home.html">
+        <img src="../Imagesforwebpng/Logo.png" alt="Alice In Chains Logo" class="logo">
+    </a>
+
+    <div class="container text-center">
+        <h1>Jar of Flies Vinyl</h1>
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <img src="../Imagesforwebpng/JarOfFliesVinyl.png" alt="Jar of Flies Vinyl" class="img-fluid product-image">
+            </div>
+            <div class="col-md-12 mt-4">
+                <h2>Price: $29.99</h2>
+                <p>Description: High-quality vinyl of the *Jar of Flies* album by Alice In Chains.</p>
+                <form action="Cart.html" method="POST">
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" name="quantity" min="1" value="1" class="form-control w-50 mx-auto">
+                    <button type="submit" class="btn btn-add-to-cart mt-3">Add to Cart</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Album Details -->
+        <h2 class="mt-5">Album Details: Jar of Flies</h2>
+        <p><strong>Release Date:</strong> January 25, 1994</p>
+        <p><strong>Impact:</strong> *Jar of Flies* was the first EP to debut at number one on the Billboard 200 chart. It showcased Alice In Chains' ability to blend acoustic melodies with introspective and emotional lyrics, setting it apart from their heavier works.</p>
+        <p><strong>Themes:</strong> The album explores themes of loneliness, regret, and introspection. Layne Staley's lyrics in songs like "Rotten Apple" and "Nutshell" are deeply personal, reflecting his struggles with addiction and feelings of isolation.</p>
+
+        <h3>Layne Staley's Writing: A Deeper Look</h3>
+        <p>Layne Staley's writing on *Jar of Flies* is a masterclass in vulnerability and emotional depth. In <strong>"Rotten Apple,"</strong> the opening track, Layne's lyrics explore themes of guilt and self-reflection. The repeated line <em>"Hey ah na na, innocence is over"</em> conveys a sense of loss and regret, as if mourning a purity that has been irreversibly tainted. The song's slow, bluesy groove, paired with Layne's haunting vocal delivery, creates an atmosphere of introspection and melancholy.</p>
+        <p>In <strong>"Nutshell,"</strong> one of the band's most beloved tracks, Layne bares his soul with raw honesty. The lyrics, <em>"We chase misprinted lies / We face the path of time"</em>, reflect his struggles with fame, addiction, and the passage of time. The line <em>"And yet I fight, this battle all alone"</em> is a poignant admission of isolation and inner turmoil. Layne's vocal performance is understated yet deeply moving, capturing the essence of vulnerability and despair. "Nutshell" has become an anthem for those who feel misunderstood or alone, resonating with fans on a deeply personal level.</p>
+
+        <h3>The Brilliance of the Band</h3>
+        <p>While Layne's lyrics and vocals are the emotional core of *Jar of Flies*, the brilliance of the rest of the band cannot be overstated. Jerry Cantrell's guitar work is both intricate and evocative, seamlessly blending acoustic and electric elements to create a rich, textured sound. His harmonies with Layne add depth and complexity to the songs, enhancing their emotional impact.</p>
+        <p>Mike Inez's bass lines, particularly in "Rotten Apple," are melodic and atmospheric, providing a solid foundation while also adding a sense of movement and fluidity. Sean Kinney's drumming is subtle yet powerful, perfectly complementing the album's acoustic and introspective nature. The instrumental track <strong>"Whale & Wasp"</strong> showcases the band's ability to create evocative soundscapes without the need for lyrics, highlighting their versatility and creativity.</p>
+        <p>*Jar of Flies* is a testament to Alice In Chains' ability to push the boundaries of their sound while staying true to their emotional and artistic integrity. The combination of Layne's deeply personal lyrics and the band's musical brilliance makes this album a timeless masterpiece.</p>
+
+        <!-- Tracklist -->
+        <h3 class="mt-4">Tracklist:</h3>
+        <ul class="tracklist">
+            <li>1. Rotten Apple</li>
+            <li>2. Nutshell</li>
+            <li>3. I Stay Away</li>
+            <li>4. No Excuses</li>
+            <li>5. Whale & Wasp</li>
+            <li>6. Don’t Follow</li>
+            <li>7. Swing on This</li>
+        </ul>
+
+        <!-- Spotify Player for Jar of Flies -->
+        <h2 class="mt-5">Listen to Jar of Flies</h2>
+        <iframe class="spotify-player" 
+                src="https://open.spotify.com/embed/album/4FCoFSNIFhK36holxHWCnc?utm_source=generator" 
+                width="100%" 
+                height="352" 
+                frameborder="0" 
+                allowfullscreen="" 
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                loading="lazy">
+        </iframe>
+
+        <!-- Other Products Section -->
+        <div class="other-products">
+            <h2>Other Products</h2>
+            <div class="row mt-3">
+                <div class="col-md-4">
+                    <a href="ProductDetails_FaceliftVinyl.html">
+                        <img src="../Imagesforwebpng/FaceliftVinyl.png" alt="Facelift Vinyl">
+                    </a>
+                    <h3>Facelift Vinyl</h3>
+                    <p>$29.99</p>
+                    <a href="ProductDetails_FaceliftVinyl.html" class="btn btn-buy">View Details</a>
+                </div>
+                <div class="col-md-4">
+                    <a href="ProductDetails_DirtVinyl.html">
+                        <img src="../Imagesforwebpng/DirtVinyl.png" alt="Dirt Vinyl">
+                    </a>
+                    <h3>Dirt Vinyl</h3>
+                    <p>$29.99</p>
+                    <a href="ProductDetails_DirtVinyl.html" class="btn btn-buy">View Details</a>
+                </div>
+                <div class="col-md-4">
+                    <a href="ProductDetails_SapVinyl.html">
+                        <img src="../Imagesforwebpng/SapVinyl.png" alt="Sap Vinyl">
+                    </a>
+                    <h3>Sap Vinyl</h3>
+                    <p>$25.99</p>
+                    <a href="ProductDetails_SapVinyl.html" class="btn btn-buy">View Details</a>
+                </div>
+            </div>
+        </div>
+
+        <a href="home.html" class="btn btn-back mt-5">Back to Merchandise</a>
+    </div>
+</body>
+</html>

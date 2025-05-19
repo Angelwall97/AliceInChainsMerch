@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facelift Vinyl - Product Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Rock Salt', cursive;
+            background-color: black;
+            color: white;
+        }
+        .navbar {
+            background-color: black;
+            padding: 10px;
+        }
+        .navbar a {
+            color: rgb(254, 251, 251);
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-right: 15px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            color: yellow;
+        }
+        .logo {
+            max-height: 150px;
+            margin: 20px auto;
+            display: block;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1, h2 {
+            color: red;
+            text-shadow: 0 0 10px black, 0 0 20px black;
+        }
+        .btn-back, .btn-add-to-cart {
+            background-color: red;
+            color: white;
+            font-weight: bold;
+            border: 2px solid white;
+            transition: 0.3s;
+        }
+        .btn-back:hover, .btn-add-to-cart:hover {
+            background-color: darkred;
+            border-color: yellow;
+        }
+        .product-image {
+            display: block;
+            margin: 0 auto;
+            max-width: 80%; /* Adjust the size of the image */
+            border-radius: 10px;
+            box-shadow: 0 0 20px red;
+            transition: 0.3s;
+        }
+        .product-image:hover {
+            transform: scale(1.05);
+        }
+        .tracklist {
+            text-align: left;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+        .tracklist li {
+            margin-bottom: 10px;
+        }
+        input[type="number"] {
+            background-color: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
+            border: 2px solid rgb(159, 2, 2);
+            text-align: center;
+        }
+        input[type="number"]::placeholder {
+            color: white;
+        }
+        .spotify-player {
+            margin-top: 30px;
+            border-radius: 12px;
+        }
+        .other-products {
+            margin-top: 50px;
+        }
+        .other-products img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+        }
+        .other-products h3 {
+            color: red;
+            text-shadow: 0 0 10px black, 0 0 20px black;
+        }
+        .btn-buy {
+            background-color: red;
+            border: 2px solid white;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+        .btn-buy:hover {
+            background-color: darkred;
+            border-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="Index.html">Login</a>
+        <a href="Cart.html">Shopping Cart</a>
+    </div>
+
+    <!-- Clickable Logo -->
+    <a href="home.html">
+        <img src="../Imagesforwebpng/Logo.png" alt="Alice In Chains Logo" class="logo">
+    </a>
+
+    <div class="container text-center">
+        <h1>Facelift Vinyl</h1>
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <img src="../Imagesforwebpng/FaceliftVinyl.png" alt="Facelift Vinyl" class="img-fluid product-image">
+            </div>
+            <div class="col-md-12 mt-4">
+                <h2>Price: $29.99</h2>
+                <p>Description: High-quality vinyl of the iconic *Facelift* album by Alice In Chains.</p>
+                <form onsubmit="addToCart(event)">
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" name="quantity" min="1" value="1" class="form-control w-50 mx-auto">
+                    <button type="submit" class="btn btn-add-to-cart mt-3">Add to Cart</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Album Details -->
+        <h2 class="mt-5">About the Album: Facelift</h2>
+        <p>
+            Released in 1990, *Facelift* was Alice In Chains' debut studio album and a groundbreaking release in the grunge and alternative metal genres. 
+            The album features a mix of heavy riffs, haunting melodies, and introspective lyrics, showcasing the band's unique sound and setting the stage for their future success.
+        </p>
+        <p>
+            *Facelift* includes iconic tracks like <strong>"Man in the Box"</strong>, which became a massive hit and introduced the world to Layne Staley's powerful vocals and Jerry Cantrell's masterful guitar work.
+        </p>
+
+        <h3 class="mt-4">"Love, Hate, Love"</h3>
+        <p>
+            Often regarded as one of Alice In Chains' most emotionally intense songs, <strong>"Love, Hate, Love"</strong> is a slow-burning track that builds to a powerful climax. 
+            Layne Staley's haunting vocals convey raw pain and anguish, while Jerry Cantrell's guitar work adds a dark, brooding atmosphere. 
+            The song explores themes of betrayal, heartbreak, and inner turmoil, making it a standout track on the album.
+        </p>
+
+        <h3 class="mt-4">"Bleed the Freak"</h3>
+        <p>
+            <strong>"Bleed the Freak"</strong> is a defiant anthem that addresses themes of individuality and standing up against oppression. 
+            The song's heavy riffs and dynamic shifts create a sense of tension and release, while Layne's lyrics express a powerful message of resilience. 
+            It's a track that resonates deeply with fans and highlights the band's ability to blend heavy music with meaningful lyrics.
+        </p>
+
+        <!-- Tracklist -->
+        <h3 class="mt-4">Tracklist:</h3>
+        <ul class="tracklist">
+            <li>1. We Die Young</li>
+            <li>2. Man in the Box</li>
+            <li>3. Sea of Sorrow</li>
+            <li>4. Bleed the Freak</li>
+            <li>5. I Can't Remember</li>
+            <li>6. Love, Hate, Love</li>
+            <li>7. It Ain't Like That</li>
+            <li>8. Sunshine</li>
+            <li>9. Put You Down</li>
+            <li>10. Confusion</li>
+            <li>11. I Know Somethin' ('Bout You)</li>
+            <li>12. Real Thing</li>
+        </ul>
+
+        <!-- Spotify Player -->
+        <iframe class="spotify-player" 
+                src="https://open.spotify.com/embed/album/5LbHbwejgZXRZAgzVAjkhj?utm_source=generator" 
+                width="100%" 
+                height="352" 
+                frameborder="0" 
+                allowfullscreen="" 
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                loading="lazy">
+        </iframe>
+
+        <!-- Other Products Section -->
+        <div class="other-products">
+            <h2>Other Products</h2>
+            <div class="row mt-3">
+                <div class="col-md-4">
+                    <a href="ProductDetails_SapVinyl.html">
+                        <img src="../Imagesforwebpng/SapVinyl.png" alt="Sap Vinyl">
+                    </a>
+                    <h3>Sap Vinyl</h3>
+                    <p>$25.99</p>
+                    <a href="ProductDetails_SapVinyl.html" class="btn btn-buy">View Details</a>
+                </div>
+                <div class="col-md-4">
+                    <a href="ProductDetails_DirtVinyl.html">
+                        <img src="../Imagesforwebpng/DirtVinyl.png" alt="Dirt Vinyl">
+                    </a>
+                    <h3>Dirt Vinyl</h3>
+                    <p>$29.99</p>
+                    <a href="ProductDetails_DirtVinyl.html" class="btn btn-buy">View Details</a>
+                </div>
+                <div class="col-md-4">
+                    <a href="ProductDetails_JarOfFliesTshirt.html">
+                        <img src="../Imagesforwebpng/JarOfFliesTshirt.png" alt="Jar of Flies T-Shirt">
+                    </a>
+                    <h3>Jar of Flies T-Shirt</h3>
+                    <p>$22.99</p>
+                    <a href="ProductDetails_JarOfFliesTshirt.html" class="btn btn-buy">View Details</a>
+                </div>
+            </div>
+        </div>
+
+        <a href="home.html" class="btn btn-back mt-5">Back to Merchandise</a>
+    </div>
+
+    <script>
+        // Function to add the product to the cart
+        function addToCart(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get the quantity from the input field
+            const quantity = parseInt(document.getElementById('quantity').value);
+
+            // Define the product details
+            const product = {
+                name: 'Facelift Vinyl',
+                price: 29.99,
+                quantity: quantity,
+                image: '../Imagesforwebpng/FaceliftVinyl.png'
+            };
+
+            // Retrieve the existing cart from localStorage or initialize an empty array
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Add the product to the cart
+            cart.push(product);
+
+            // Save the updated cart back to localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            // Notify the user
+            alert(`${product.name} has been added to your cart!`);
+        }
+    </script>
+</body>
+</html>

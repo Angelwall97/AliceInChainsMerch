@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alice In Chains Merchandise</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Rock Salt', cursive;
+        }
+        .navbar {
+            background-color: black;
+            padding: 10px;
+        }
+        .navbar a {
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-right: 15px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            color: rgb(255, 0, 0);
+        }
+        .logo {
+            max-height: 150px;
+            margin: 20px auto;
+            display: block;
+        }
+        .merch-item img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+            transition: transform 0.3s ease-in-out;
+        }
+        .merch-item img:hover {
+            transform: scale(1.05);
+        }
+        .merch-item h3 {
+            color: red;
+            text-shadow: 0 0 10px black, 0 0 20px black;
+        }
+        .btn-buy {
+            background-color: red;
+            border: 2px solid white;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+        .btn-buy:hover {
+            background-color: darkred;
+            border-color: yellow;
+            transform: scale(1.1);
+        }
+        .spotify-player {
+            position: relative;
+            margin-top: 50px; 
+            border-radius: 12px;
+        }
+        .contact-section, .faq-section {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #111;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+        }
+        .contact-section h2, .faq-section h2 {
+            color: red;
+            text-shadow: 0 0 10px black, 0 0 20px black;
+        }
+        .faq-section p {
+            margin-bottom: 10px;
+        }
+        .page-end {
+            height: 100px; 
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="navbar">
+        <a href="Index.html">Login</a>
+        <a href="Cart.html">Shopping Cart</a>
+        <a href="about.html">About</a>
+    </div>
+
+    <div class="container text-center">
+        <!-- Logo -->
+        <img src="../Imagesforwebpng/Logo.png" alt="Alice In Chains Logo" class="logo">
+
+        <!-- Welcome Section -->
+        <h1>Welcome to Alice In Chains Merchandise</h1>
+        <p>Explore our exclusive collection of vinyls and t-shirts!</p>
+
+        <!-- Product Carousel Section -->
+        <div id="productCarousel" class="carousel slide mt-5" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#productCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#productCarousel" data-slide-to="1"></li>
+                <li data-target="#productCarousel" data-slide-to="2"></li>
+                <li data-target="#productCarousel" data-slide-to="3"></li>
+            </ol>
+
+            <!-- Slideshow Items -->
+            <div class="carousel-inner">
+                <!-- Slide 1: Band Image -->
+                <div class="carousel-item active">
+                    <img src="../Imagesforwebpng/band.webp" class="d-block w-100" alt="Alice In Chains Band">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Alice In Chains</h5>
+                        <p>Legendary Grunge Band</p>
+                    </div>
+                </div>
+                <!-- Slide 2: Jar of Flies Vinyl -->
+                <div class="carousel-item">
+                    <img src="../Imagesforwebpng/JarOfFliesVinyl.png" class="d-block w-100" alt="Jar of Flies Vinyl">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Vinyl - Jar of Flies</h5>
+                        <p>$29.99</p>
+                    </div>
+                </div>
+                <!-- Slide 3: Dirt T-Shirt -->
+                <div class="carousel-item">
+                    <img src="../Imagesforwebpng/DirtTshirt.png" class="d-block w-100" alt="Dirt T-Shirt">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>T-Shirt - Dirt</h5>
+                        <p>$19.99</p>
+                    </div>
+                </div>
+                <!-- Slide 4: Tripod Vinyl -->
+                <div class="carousel-item">
+                    <img src="../Imagesforwebpng/TripodVinyl.png" class="d-block w-100" alt="Tripod Vinyl">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Vinyl - Tripod</h5>
+                        <p>$29.99</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <a class="carousel-control-prev" href="#productCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#productCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+        <!-- Merchandise Section -->
+        <div class="row mt-5">
+            <!-- Facelift Vinyl -->
+            <div class="col-md-6 merch-item">
+                <a href="ProductDetails_FaceliftVinyl.html">
+                    <img src="../Imagesforwebpng/FaceliftVinyl.png" alt="Alice In Chains Facelift Vinyl">
+                </a>
+                <h3>Vinyl - Facelift</h3>
+                <p>$29.99</p>
+                <a href="ProductDetails_FaceliftVinyl.html" class="btn btn-buy">Buy Now</a>
+            </div>
+            <!-- Facelift T-Shirt -->
+            <div class="col-md-6 merch-item">
+                <a href="ProductDetails_FaceliftTshirt.html">
+                    <img src="../Imagesforwebpng/FaceliftTshirt.png" alt="Alice In Chains Facelift T-Shirt">
+                </a>
+                <h3>T-Shirt - Facelift</h3>
+                <p>$24.99</p>
+                <a href="ProductDetails_FaceliftTshirt.html" class="btn btn-buy">Buy Now</a>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <!-- Jar of Flies Vinyl -->
+            <div class="col-md-6 merch-item">
+                <a href="ProductDetails_JarOfFliesVinyl.html">
+                    <img src="../Imagesforwebpng/JarOfFliesVinyl.png" alt="Alice In Chains Jar of Flies Vinyl">
+                </a>
+                <h3>Vinyl - Jar of Flies</h3>
+                <p>$29.99</p>
+                <a href="ProductDetails_JarOfFliesVinyl.html" class="btn btn-buy">Buy Now</a>
+            </div>
+            <!-- Sap Vinyl -->
+            <div class="col-md-6 merch-item">
+                <a href="ProductDetails_SapVinyl.html">
+                    <img src="../Imagesforwebpng/SapVinyl.png" alt="Alice In Chains Sap Vinyl">
+                </a>
+                <h3>Vinyl - Sap</h3>
+                <p>$25.99</p>
+                <a href="ProductDetails_SapVinyl.html" class="btn btn-buy">Buy Now</a>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <!-- Sap T-Shirt -->
+            <div class="col-md-6 merch-item">
+                <a href="ProductDetails_SapTshirt.html">
+                    <img src="../Imagesforwebpng/SapTshirt.png" alt="Alice In Chains Sap T-Shirt">
+                </a>
+                <h3>T-Shirt - Sap</h3>
+                <p>$22.99</p>
+                <a href="ProductDetails_SapTshirt.html" class="btn btn-buy">Buy Now</a>
+            </div>
+            <!-- Dirt Vinyl -->
+            <div class="col-md-6 merch-item">
+                <a href="ProductDetails_DirtVinyl.html">
+                    <img src="../Imagesforwebpng/DirtVinyl.png" alt="Alice In Chains Dirt Vinyl">
+                </a>
+                <h3>Vinyl - Dirt</h3>
+                <p>$29.99</p>
+                <a href="ProductDetails_DirtVinyl.html" class="btn btn-buy">Buy Now</a>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <!-- Dirt T-Shirt -->
+            <div class="col-md-6 merch-item">
+                <a href="ProductDetails_DirtTshirt.html">
+                    <img src="../Imagesforwebpng/DirtTshirt.png" alt="Alice In Chains Dirt T-Shirt">
+                </a>
+                <h3>T-Shirt - Dirt</h3>
+                <p>$19.99</p>
+                <a href="ProductDetails_DirtTshirt.html" class="btn btn-buy">Buy Now</a>
+            </div>
+            <!-- Tripod Vinyl -->
+            <div class="col-md-6 merch-item">
+                <a href="ProductDetails_TripodVinyl.html">
+                    <img src="../Imagesforwebpng/TripodVinyl.png" alt="Alice In Chains Tripod Vinyl">
+                </a>
+                <h3>Vinyl - Tripod</h3>
+                <p>$29.99</p>
+                <a href="ProductDetails_TripodVinyl.html" class="btn btn-buy">Buy Now</a>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <!-- Tripod T-Shirt -->
+            <div class="col-md-6 merch-item">
+                <a href="ProductDetails_TripodTshirt.html">
+                    <img src="../Imagesforwebpng/TripodTshirt.png" alt="Alice In Chains Tripod T-Shirt">
+                </a>
+                <h3>T-Shirt - Tripod</h3>
+                <p>$25.99</p>
+                <a href="ProductDetails_TripodTshirt.html" class="btn btn-buy">Buy Now</a>
+            </div>
+        </div>
+
+        <!-- Spotify Player -->
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <iframe class="spotify-player" 
+                        src="https://open.spotify.com/embed/album/0sxtxvCh25yI54sLmRumCN?utm_source=generator" 
+                        width="100%" 
+                        height="152" 
+                        frameborder="0" 
+                        allowfullscreen="" 
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                        loading="lazy">
+                </iframe>
+            </div>
+        </div>
+
+        <!-- Contact Information Section -->
+        <div class="contact-section">
+            <h2>Contact Information</h2>
+            <p><strong>Email:</strong> support@aliceinchainsmerch.com</p>
+            <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+            <p><strong>Address:</strong> 123 Grunge Lane, Seattle, WA, USA</p>
+        </div>
+
+        <!-- Newsletter Signup Section -->
+        <div class="contact-section mt-5">
+            <h2>Sign Up for Our Newsletter</h2>
+            <form id="newsletterForm" onsubmit="validateForm(event)">
+                <div class="form-group">
+                    <label for="username">Name:</label>
+                    <input type="text" id="username" name="username" class="form-control" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
+                </div>
+                <button type="submit" class="btn btn-buy mt-3">Subscribe</button>
+            </form>
+            <p id="formMessage" class="mt-3" style="color: yellow;"></p>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <p><strong>Q: How long does shipping take?</strong></p>
+            <p>A: Shipping typically takes 5-7 business days within the US and 10-15 business days internationally.</p>
+            <p><strong>Q: Can I return or exchange an item?</strong></p>
+            <p>A: Yes, we accept returns and exchanges within 30 days of purchase. Please visit our Returns page for more details.</p>
+            <p><strong>Q: Do you ship internationally?</strong></p>
+            <p>A: Yes, we ship to most countries worldwide. Shipping fees and delivery times vary by location.</p>
+        </div>
+
+        <!-- Page End Spacer -->
+        <div class="page-end"></div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        function validateForm(event) {
+            event.preventDefault(); // Prevent form submission
+
+            const username = document.getElementById('username').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const formMessage = document.getElementById('formMessage');
+
+            // Check if fields are empty
+            if (!username || !email) {
+                formMessage.textContent = 'Please fill out all fields.';
+                return;
+            }
+
+            // Validate email format
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                formMessage.textContent = 'Please enter a valid email address.';
+                return;
+            }
+
+            // If validation passes
+            formMessage.textContent = 'Thank you for subscribing!';
+            formMessage.style.color = 'green';
+
+            // Optionally, you can clear the form fields
+            document.getElementById('newsletterForm').reset();
+        }
+    </script>
+</body>
+</html>

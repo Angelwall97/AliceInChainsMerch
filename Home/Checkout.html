@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Rock Salt', cursive;
+        }
+        .navbar {
+            background-color: black;
+            padding: 10px;
+        }
+        .navbar a {
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-right: 15px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            color: yellow;
+        }
+        .logo {
+            max-height: 150px;
+            margin: 20px auto;
+            display: block;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1, h2 {
+            color: red;
+            text-shadow: 0 0 10px black, 0 0 20px black;
+        }
+        .btn-back, .btn-submit {
+            background-color: red;
+            color: white;
+            font-weight: bold;
+            border: 2px solid white;
+            transition: 0.3s;
+        }
+        .btn-back:hover, .btn-submit:hover {
+            background-color: darkred;
+            border-color: yellow;
+        }
+        .cart-item {
+            border-bottom: 1px solid white;
+            padding: 10px 0;
+        }
+        .cart-item img {
+            max-width: 100px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px red;
+            margin-bottom: 10px;
+        }
+        input, textarea, select {
+            background-color: black;
+            color: white;
+            border: 1px solid white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: red;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="Index.html">Login</a>
+        <a href="Cart.html">Shopping Cart</a>
+    </div>
+
+    <!-- Clickable Logo -->
+    <a href="home.html">
+        <img src="../Imagesforwebpng/Logo.png" alt="Alice In Chains Logo" class="logo">
+    </a>
+
+    <div class="container text-center">
+        <h1>Checkout</h1>
+        <p>Review your order and enter your details below:</p>
+
+        <!-- Order Review Section -->
+        <div id="order-review" class="mt-5">
+            <!-- Order items will be dynamically added here -->
+        </div>
+
+        <h2 class="mt-4">Total: $<span id="total-price">0.00</span></h2>
+
+        <!-- Customer Details Form -->
+        <form id="checkout-form" class="mt-5">
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" class="form-control w-50 mx-auto" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" class="form-control w-50 mx-auto" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Shipping Address:</label>
+                <textarea id="address" class="form-control w-50 mx-auto" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="postcode">Postcode:</label>
+                <input type="text" id="postcode" class="form-control w-50 mx-auto" required>
+            </div>
+            <div class="form-group">
+                <label for="payment-method">Payment Method:</label>
+                <select id="payment-method" class="form-control w-50 mx-auto" required>
+                    <option value="" disabled selected>Select Payment Method</option>
+                    <option value="credit-card">Credit Card</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="bank-transfer">Bank Transfer</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="card-details">Card Details:</label>
+                <input type="text" id="card-details" class="form-control w-50 mx-auto" placeholder="Card Number" required>
+            </div>
+            <button type="submit" class="btn btn-submit mt-3">Place Order</button>
+        </form>
+
+        <a href="Cart.html" class="btn btn-back mt-5">Back to Cart</a>
+    </div>
+
+    <script>
+        // Retrieve cart items from localStorage
+        const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Function to render order review
+        function renderOrderReview() {
+            const orderReviewContainer = document.getElementById('order-review');
+            const totalPriceElement = document.getElementById('total-price');
+            orderReviewContainer.innerHTML = ''; // Clear existing items
+
+            if (cartItems.length === 0) {
+                orderReviewContainer.innerHTML = '<p>Your cart is empty. Please add items to your cart before checking out.</p>';
+                totalPriceElement.textContent = '0.00';
+                document.getElementById('checkout-form').style.display = 'none';
+                return;
+            }
+
+            let totalPrice = 0;
+
+            cartItems.forEach((item) => {
+                const orderItem = document.createElement('div');
+                orderItem.classList.add('cart-item');
+                orderItem.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}" class="img-fluid">
+                    <h2>${item.name}</h2>
+                    <p>Price: $${item.price}</p>
+                    <p>Quantity: ${item.quantity}</p>
+                    ${item.size ? `<p>Size: ${item.size}</p>` : ''}
+                    ${item.gender ? `<p>Gender: ${item.gender}</p>` : ''}
+                `;
+                orderReviewContainer.appendChild(orderItem);
+
+                // Calculate total price
+                totalPrice += item.price * item.quantity;
+            });
+
+            totalPriceElement.textContent = totalPrice.toFixed(2);
+        }
+
+        // Handle form submission
+        document.getElementById('checkout-form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Retrieve customer details
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+
+            // Display confirmation message (optional)
+            alert(`Thank you for your order, ${name}! A confirmation email will be sent to ${email}.`);
+
+            // Clear the cart and redirect to the order confirmation page
+            localStorage.removeItem('cart');
+            window.location.href = 'OrderConfirmation.html';
+        });
+
+        // Render order review on page load
+        renderOrderReview();
+    </script>
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tripod Vinyl - Product Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Rock Salt', cursive;
+        }
+        .navbar {
+            background-color: black;
+            padding: 10px;
+        }
+        .navbar a {
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-right: 15px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            color: yellow;
+        }
+        .logo {
+            max-height: 150px;
+            margin: 20px auto;
+            display: block;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1, h2 {
+            color: red;
+            text-shadow: 0 0 10px black, 0 0 20px black;
+        }
+        .btn-back, .btn-add-to-cart {
+            background-color: red;
+            color: white;
+            font-weight: bold;
+            border: 2px solid white;
+            transition: 0.3s;
+        }
+        .btn-back:hover, .btn-add-to-cart:hover {
+            background-color: darkred;
+            border-color: yellow;
+        }
+        .product-image {
+            display: block;
+            margin: 0 auto;
+            max-width: 80%;
+            border-radius: 10px;
+            box-shadow: 0 0 20px red;
+            transition: 0.3s;
+        }
+        .product-image:hover {
+            transform: scale(1.05);
+        }
+        .spotify-section h2 {
+            color: red;
+            margin-top: 30px;
+        }
+        .spotify-player {
+            border-radius: 12px;
+            margin-top: 10px;
+        }
+        .other-products img {
+            max-width: 70%; /* Reduced size for other product images */
+            margin: 0 auto;
+            display: block;
+        }
+        .other-products h3 {
+            font-size: 1rem; /* Smaller font size for product titles */
+        }
+        .other-products p {
+            font-size: 0.9rem; /* Smaller font size for product prices */
+        }
+        .btn-view-details {
+            background-color: red;
+            color: white;
+            font-weight: bold;
+            border: 2px solid white;
+            transition: 0.3s;
+            font-size: 0.8rem; /* Smaller button text */
+        }
+        .btn-view-details:hover {
+            background-color: darkred;
+            border-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="Index.html">Login</a>
+        <a href="Cart.html">Shopping Cart</a>
+    </div>
+
+    <!-- Clickable Logo -->
+    <a href="home.html">
+        <img src="../Imagesforwebpng/Logo.png" alt="Alice In Chains Logo" class="logo">
+    </a>
+
+    <div class="container text-center">
+        <h1>Tripod Vinyl</h1>
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <img src="../Imagesforwebpng/TripodVinyl.png" alt="Tripod Vinyl" class="img-fluid product-image">
+            </div>
+            <div class="col-md-12 mt-4">
+                <h2>Price: $29.99</h2>
+                <p>Description: High-quality vinyl of the *Alice In Chains* self-titled album (*Tripod*).</p>
+                <!-- Form to add the vinyl to the cart -->
+                <form onsubmit="addToCart(event)">
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" name="quantity" min="1" value="1" class="form-control w-50 mx-auto">
+                    <button type="submit" class="btn btn-add-to-cart mt-3">Add to Cart</button>
+                </form>
+
+                <script>
+                    function addToCart(event) {
+                        event.preventDefault(); // Prevent form submission
+
+                        // Retrieve quantity from the input field
+                        const quantity = parseInt(document.getElementById('quantity').value);
+
+                        // Define the product details
+                        const product = {
+                            name: "Tripod Vinyl",
+                            price: 29.99,
+                            quantity: quantity,
+                            image: "../Imagesforwebpng/TripodVinyl.png"
+                        };
+
+                        // Retrieve the existing cart from localStorage or initialize a new one
+                        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+                        // Check if the product already exists in the cart
+                        const existingProductIndex = cart.findIndex(item => item.name === product.name);
+                        if (existingProductIndex > -1) {
+                            // Update the quantity if the product already exists
+                            cart[existingProductIndex].quantity += quantity;
+                        } else {
+                            // Add the new product to the cart
+                            cart.push(product);
+                        }
+
+                        // Save the updated cart back to localStorage
+                        localStorage.setItem('cart', JSON.stringify(cart));
+
+                        // Notify the user
+                        alert(`${product.name} has been added to your cart!`);
+                    }
+                </script>
+            </div>
+        </div>
+
+        <!-- Album Details -->
+        <h2 class="mt-5">Album Details: Alice In Chains (Tripod)</h2>
+        <p><strong>Release Date:</strong> November 7, 1995</p>
+        <p><strong>Background:</strong> Often referred to as *Tripod* due to its cover art featuring a three-legged dog, this self-titled album marked a darker and more introspective turn for Alice In Chains. It was the band's final studio album with Layne Staley before his death in 2002.</p>
+        <p><strong>Impact:</strong> The album received critical acclaim for its raw emotion and heavy, sludgy sound. It showcased the band's ability to blend haunting melodies with introspective lyrics, cementing their legacy as one of the most influential bands of the grunge era.</p>
+        <p><strong>Themes:</strong> The album explores themes of addiction, isolation, and despair. Songs like "Frogs" and "Shame in You" delve into Layne's inner world where in which he highlights his loneliness and despair while "Brush Away" captures the band's signature heavy sound.</p>
+        <h3>Layne Staley's Writing: A Deeper Look</h3>
+        <p>Layne Staley's writing on *Tripod* is deeply introspective and poetic, often reflecting his battles with addiction, loneliness, and existential despair. One of the standout tracks, <strong>"Frogs,"</strong> is a haunting exploration of regret and longing. The song's slow, brooding tempo and melancholic lyrics create an atmosphere of isolation, as Layne sings about the pain of lost connections and the weight of his choices.</p>
+        <p>In "Frogs," Layne's lyrics, such as <em>"Why's it have to be this way? / Be this way at all?"</em>, convey a sense of helplessness and yearning for change. The imagery in the song is vivid and surreal, painting a picture of emotional stagnation and the struggle to break free from it. The repetitive, almost hypnotic structure of the song mirrors the cyclical nature of his struggles, making it one of the most emotionally resonant tracks on the album.</p>
+        <p>Layne's ability to channel his pain into his lyrics gave the album a raw authenticity that resonated deeply with fans. His writing on *Tripod* is a testament to his talent as a lyricist and his willingness to confront his demons through his art.</p>
+
+        <!-- Tracklist -->
+        <h3 class="mt-4">Tracklist:</h3>
+        <ul class="tracklist">
+            <li>1. Grind</li>
+            <li>2. Brush Away</li>
+            <li>3. Sludge Factory</li>
+            <li>4. Heaven Beside You</li>
+            <li>5. Head Creeps</li>
+            <li>6. Again</li>
+            <li>7. Shame in You</li>
+            <li>8. God Am</li>
+            <li>9. So Close</li>
+            <li>10. Nothin' Song</li>
+            <li>11. Frogs</li>
+            <li>12. Over Now</li>
+        </ul>
+
+        <!-- Spotify Section -->
+        <div class="spotify-section">
+            <h2>Listen to Tripod</h2>
+            <iframe class="spotify-player" 
+                    src="https://open.spotify.com/embed/album/49R4Qye4UUwzjPPQhtCkRe?utm_source=generator" 
+                    width="100%" 
+                    height="352" 
+                    frameborder="0" 
+                    allowfullscreen="" 
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                    loading="lazy">
+            </iframe>
+        </div>
+
+        <!-- Other Products Section -->
+        <h2 class="mt-5">Other Products</h2>
+        <div class="row other-products">
+            <div class="col-md-4 text-center">
+                <a href="ProductDetails_SapVinyl.html">
+                    <img src="../Imagesforwebpng/SapVinyl.png" alt="Sap Vinyl">
+                </a>
+                <h3>Sap Vinyl</h3>
+                <p>$25.99</p>
+                <a href="ProductDetails_SapVinyl.html" class="btn btn-view-details">View Details</a>
+            </div>
+            <div class="col-md-4 text-center">
+                <a href="ProductDetails_DirtVinyl.html">
+                    <img src="../Imagesforwebpng/DirtVinyl.png" alt="Dirt Vinyl">
+                </a>
+                <h3>Dirt Vinyl</h3>
+                <p>$29.99</p>
+                <a href="ProductDetails_DirtVinyl.html" class="btn btn-view-details">View Details</a>
+            </div>
+            <div class="col-md-4 text-center">
+                <a href="ProductDetails_JarOfFliesTshirt.html">
+                    <img src="../Imagesforwebpng/JarOfFliesTshirt.png" alt="Jar of Flies T-Shirt">
+                </a>
+                <h3>Jar of Flies T-Shirt</h3>
+                <p>$22.99</p>
+                <a href="ProductDetails_JarOfFliesTshirt.html" class="btn btn-view-details">View Details</a>
+            </div>
+        </div>
+
+        <a href="home.html" class="btn btn-back mt-5">Back to Merchandise</a>
+    </div>
+</body>
+</html>
